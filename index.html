@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Khusus Buat Feby Tersayang ❤️🛵</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Floating Background Hearts & Icons -->
+    <div id="hearts-bg"></div>
+
+    <!-- Tombol Musik Mengambang: Sampai Jadi Debu - Banda Neira -->
+    <div class="music-btn-container" onclick="toggleMusic()">
+        <button id="musicBtn" class="music-btn" title="Sampai Jadi Debu - Banda Neira">
+            <span id="musicIcon">🎵</span>
+        </button>
+        <div class="music-info-text">
+            <span class="music-label" id="musicLabelText">Sampai Jadi Debu 🎶</span>
+            <span class="music-sublabel">Banda Neira</span>
+        </div>
+        <audio id="bgMusic" src="music.m4a" loop preload="auto">
+            <source src="music.m4a" type="audio/mp4">
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="container">
+        
+        <!-- FASE 1: AMPLOP PEMBUKA -->
+        <div id="envelope-screen" class="envelope-wrapper">
+            <div class="envelope" onclick="openLetter()">
+                <div class="envelope-flap"></div>
+                <div class="envelope-pocket"></div>
+                <div class="letter-preview">
+                    <p>💌 Khusus Buat Feby</p>
+                </div>
+                <div class="heart-seal">❤️</div>
+            </div>
+            <p class="click-hint">Buka amplopnya ya Feby sayang... 🥺👉👈</p>
+        </div>
+
+        <!-- FASE 2: KONTEN UTAMA MINTA MAAF -->
+        <div id="main-content" class="card hidden">
+            
+            <!-- FRAME FOTO POLAROID SLIDER -->
+            <div class="photo-card-wrapper">
+                <div class="polaroid">
+                    <div class="photo-frame">
+                        <img id="girlPhoto" src="foto1.jpg" alt="Foto Feby dan Aku">
+                        <!-- Tombol panah geser foto -->
+                        <div class="slider-arrows">
+                            <button class="arrow-btn" onclick="prevPhoto(event)">❮</button>
+                            <button class="arrow-btn" onclick="nextPhoto(event)">❯</button>
+                        </div>
+                    </div>
+
+                    <!-- Titik indikator foto -->
+                    <div class="photo-dots" id="dotsContainer">
+                        <span class="dot active" onclick="jumpToPhoto(0)"></span>
+                        <span class="dot" onclick="jumpToPhoto(1)"></span>
+                        <span class="dot" onclick="jumpToPhoto(2)"></span>
+                    </div>
+
+                    <div class="polaroid-caption">
+                        <span id="photoCaption">Feby, Si Cantik dari IVI Piaggio 🌸🛵</span>
+                    </div>
+                </div>
+                <p class="slide-tip">✨ Geser panah ❮ ❯ untuk lihat foto kenangan kita ✨</p>
+            </div>
+
+            <!-- TEKS PERMINTAAN MAAF -->
+            <div class="text-content">
+                <h1 class="romantic-title">Maafin Aku Ya Feby Sayang... 🥺</h1>
+                
+                <div class="letter-box">
+                    <p class="message-text">
+                        Hai Feby cantik... Aku tahu belakangan ini sikap atau kata-kataku bikin kamu sedih, kesel, atau bad mood. Kamu yang udah capek seharian beraktivitas di <strong>IVI Piaggio</strong>, malah aku bikin tambah pusing dan kesel. Aku bener-bener nyesel dan minta maaf dari lubuk hatiku yang paling dalam... 🙏❤️
+                    </p>
+                    <p class="message-text">
+                        Nggak pernah ada niat sedikit pun di hatiku buat nyakitin perasaan orang yang paling aku sayang. Liat foto-foto kita di atas selalu ngingetin aku betapa berharganya Feby di hidup aku. Jangan cemberut lagi ya sayang... 😔
+                    </p>
+                    <p class="message-highlight">
+                        Feby mau kan maafin cowokmu yang banyak kurangnya ini? Janji bakal selalu berusaha jadi pasangan yang lebih baik dan bikin kamu senyum terus... ✨
+                    </p>
+                </div>
+
+                <!-- PERTANYAAN INTERAKTIF -->
+                <div id="action-section" class="action-section">
+                    <p class="question-text">Gimana Feby sayang, dimaafin kan? 🥺👉👈</p>
+                    <div class="btn-group" id="btnGroup">
+                        <button class="btn btn-yes" id="btnYes" onclick="onForgive()">
+                            Iya, dimaafin sayang ❤️
+                        </button>
+                        <button class="btn btn-no" id="btnNo" onmouseover="dodgeButton()" onclick="dodgeButton()">
+                            Nggak mau 😠
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STATE PERAYAAN SETELAH DIMAAFKAN -->
+                <div id="forgiven-section" class="forgiven-section hidden">
+                    <div class="celebrate-badge">🎉 YAAAAY! 🥰</div>
+                    <h2>Makasih Banyak Feby Tercantik Sedunia! ❤️🛵</h2>
+                    <p class="forgiven-text">
+                        Makasih ya Feby udah selalu punya hati yang lapang dan sabar ngadepin aku. Sekarang senyum cantiknya udah balik lagi! Sebagai tanda damai, Feby berhak klaim voucher ini:
+                    </p>
+                    
+                    <ul class="promise-list">
+                        <li>🛵 Jalan-jalan sore keliling naik Vespa bareng berdua!</li>
+                        <li>🍧 Bebas minta jajan / es krim / makanan favorit Feby sepuasnya!</li>
+                        <li>🤗 Peluk erat virtual 1000x + cium kening paling manis!</li>
+                    </ul>
+
+                    <div class="chat-wa-box">
+                        <a id="waLink" href="https://wa.me/?text=Iya%20aku%20udah%20maafin%20kamu%20sayang%20%E2%9D%A4%EF%B8%8F%20Sekarang%20jangan%20lupa%20jemput%20Feby%20di%20IVI%20Piaggio%20dan%20tepatin%20janjinya%20ya!%20%F0%9F%9B%B5" target="_blank" class="btn btn-wa">
+                            💬 Kabarin Aku di WhatsApp 🥰
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

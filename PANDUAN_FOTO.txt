@@ -1,0 +1,18 @@
+===================================================
+PANDUAN MEMASUKKAN FOTO FEBY KE DALAM WEBSITE:
+===================================================
+
+Ada 2 cara yang sangat mudah untuk memasang foto Feby:
+
+CARA 1 (Paling Mudah - Langsung di Halaman Website):
+1. Buka website di browser dengan cara klik 2x file "index.html".
+2. Buka amplop suratnya.
+3. Di bawah bingkai foto polaroid, klik tombol:
+   👉 "📷 Pasang Foto Feby"
+4. Pilih foto Feby terbaik dari laptop/komputer Anda.
+5. Fotonya akan langsung terpasang cantik di dalam bingkai polaroid (lengkap dengan caption "Feby, Si Cantik dari IVI Piaggio 🌸🛵").
+
+CARA 2 (Menggunakan File Gambar Langsung):
+1. Copy file foto Feby ke dalam folder ini (C:\Users\Admin\Downloads\websiteminta maaf).
+2. Ubah nama file fotonya menjadi: feby.jpg
+3. Di file index.html baris ke-46, ganti src gambar menjadi: src="feby.jpg"
